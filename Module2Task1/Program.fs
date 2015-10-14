@@ -1,8 +1,6 @@
 ﻿// Learn more about F# at http://fsharp.net
 // See the 'F# Tutorial' project for more help.
 open System
-open System.Collections
-open System.Collections.Generic
 
 let checkNumber str = 
     let isCorrect, no = Int32.TryParse(str)
@@ -52,9 +50,9 @@ let print3 tuple =
 
 let print tuple1 =
    match tuple1 with
-    | (a, b) when b < 13 -> print3 (a, b, "Child")
-    | (a, b) when b >= 13 && b < 18 -> print3 (a, b, "Teenager")
-    | (a, b) -> print3 (a, b, "Adult")
+    | (a, b) when b < 13 -> print3 (a, b, a + " is a child")
+    | (a, b) when b >= 13 && b < 18 -> print3 (a, b, a + " is a teenager")
+    | (a, b) -> print3 (a, b, a + " is not longer a teenager")
 
 [<EntryPoint>]
 let main argv = 
